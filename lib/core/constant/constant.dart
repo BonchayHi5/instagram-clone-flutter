@@ -1,4 +1,8 @@
 const double kDefaultFontSize = 12.0;
+const double kDefaultMediumFontSize = 16.0;
+const double kDefaultBigFontSize = 22.0;
+
+const double kDefaultPadding = 12.0;
 
 const double kDefaultIconSize = 25.0;
 
