@@ -6,7 +6,7 @@
 
 ### Home Screen
 
-<img src="https://github.com/BonchayHi5/instagram-clone/blob/master/asset/home_screenshot.jpg", width="200" height="200">
+<img src="https://github.com/BonchayHi5/instagram-clone/blob/master/asset/home_screenshot.jpg" width="200" height="200">
 
 
 This project is a starting point for a Flutter application.
