@@ -4,6 +4,7 @@ export 'ui/screen/profile.dart';
 export 'ui/widget/home_stories.dart';
 export 'ui/widget/home_body.dart';
 export 'ui/widget/home_appbar.dart';
+export 'ui/widget/home_bottom.dart';
 
 export 'ui/widget/profile_appbar.dart';
 export 'ui/widget/profile_header.dart';

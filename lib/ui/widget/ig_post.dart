@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/all_export.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flare_flutter/flare_actor.dart';
+import 'package:flare_flutter/flare_controls.dart';
 
 class IgPost extends StatefulWidget {
   @override
@@ -8,7 +10,9 @@ class IgPost extends StatefulWidget {
 }
 
 class _IgPostState extends State<IgPost> {
-  bool _like = false;
+  final FlareControls flareControls = FlareControls();
+
+  bool _liked = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,20 +53,41 @@ class _IgPostState extends State<IgPost> {
               ],
             ),
           ),
-          GestureDetector(
-            onDoubleTap: () {
-              setState(() {
-                _like = true;
-              });
-            },
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.5,
-              width: MediaQuery.of(context).size.width,
-              child: Image.network(
-                myStories[1].image,
-                fit: BoxFit.cover,
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              GestureDetector(
+                onDoubleTap: () {
+                  setState(() {
+                    _liked = !_liked;
+                  });
+                  flareControls.play("like");
+                },
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.5,
+                  width: MediaQuery.of(context).size.width,
+                  child: Image.network(
+                    myStories[1].image,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
-            ),
+              Container(
+                width: double.infinity,
+                height: 250,
+                child: Center(
+                  child: SizedBox(
+                    width: 150,
+                    height: 150,
+                    child: FlareActor(
+                      'asset/instagram_like.flr',
+                      controller: flareControls,
+                      animation: 'idle',
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
           Container(
             height: 50.0,
@@ -70,7 +95,7 @@ class _IgPostState extends State<IgPost> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _like
+                _liked
                     ? Icon(Icons.favorite, color: Colors.red, size: 30)
                     : Icon(FontAwesomeIcons.heart, size: kDefaultIconSize),
                 SizedBox(width: 12.0),

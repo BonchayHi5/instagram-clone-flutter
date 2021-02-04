@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:instagram_clone/all_export.dart';
 
 class Home extends StatelessWidget {
@@ -7,52 +6,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeAppBar.getItem(),
-      bottomNavigationBar: BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(
-              icon: Icon(
-                Icons.home,
-                size: 30,
-              ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.search,
-                size: 30,
-              ),
-              onPressed: null,
-            ),
-            IconButton(
-              icon: Icon(
-                FontAwesomeIcons.plusSquare,
-                size: kDefaultIconSize,
-              ),
-              onPressed: null,
-            ),
-            IconButton(
-              icon: Icon(
-                FontAwesomeIcons.heart,
-                size: kDefaultIconSize,
-              ),
-              onPressed: null,
-            ),
-            Container(
-              height: 30,
-              width: 30,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(igProfileUrl),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+      bottomNavigationBar: HomeBottom(),
       body: Container(
         height: MediaQuery.of(context).size.height,
         color: Colors.white,
