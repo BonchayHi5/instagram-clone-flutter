@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Profile(), //Home(),
+      home: Home(),
     );
   }
 }
