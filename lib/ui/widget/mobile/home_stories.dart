@@ -3,21 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:instagram_clone/all_export.dart';
 
 class HomeStories extends StatelessWidget {
-  static const _gradientBorderDecoration = BoxDecoration(
-    shape: BoxShape.circle,
-    gradient: SweepGradient(
-      colors: [
-        Color(0xFF833AB4), // Purple
-        Color(0xFFF77737), // Orange
-        Color(0xFFE1306C), // Red-pink
-        Color(0xFFC13584), // Red-purple
-      ],
-    ),
-  );
+ 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.12,
+      height: 100,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: myStories.length,
@@ -32,7 +22,7 @@ class HomeStories extends StatelessWidget {
                       : Container(
                           height: 64,
                           width: 64,
-                          decoration: _gradientBorderDecoration,
+                          decoration: gradientBorderDecoration,
                         ),
                   Container(
                     height: 60,
@@ -69,10 +59,12 @@ class HomeStories extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 5),
-              Text(
-                myStories[index].name,
-                style: TextStyle(
-                  fontSize: kDefaultFontSize,
+              Expanded(
+                child: Text(
+                  myStories[index].name,
+                  style: TextStyle(
+                    fontSize: kDefaultFontSize,
+                  ),
                 ),
               ),
             ],

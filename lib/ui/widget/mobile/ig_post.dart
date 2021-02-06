@@ -15,7 +15,13 @@ class _IgPostState extends State<IgPost> {
   bool _liked = false;
   @override
   Widget build(BuildContext context) {
+    bool _isWeb = Responsive.isDesktop(context);
     return Container(
+      margin: _isWeb
+          ? const EdgeInsets.only(bottom: 30.0)
+          : const EdgeInsets.all(0),
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey[300], width: 1.0)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -33,7 +39,7 @@ class _IgPostState extends State<IgPost> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      fit: BoxFit.cover,
+                      fit: BoxFit.contain,
                       image: NetworkImage(myStories[1].image),
                     ),
                   ),
@@ -53,41 +59,41 @@ class _IgPostState extends State<IgPost> {
               ],
             ),
           ),
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              GestureDetector(
-                onDoubleTap: () {
-                  setState(() {
-                    _liked = !_liked;
-                  });
-                  flareControls.play("like");
-                },
-                child: Container(
-                  height: MediaQuery.of(context).size.height * 0.5,
-                  width: MediaQuery.of(context).size.width,
+          GestureDetector(
+            onDoubleTap: () {
+              setState(() {
+                _liked = !_liked;
+              });
+              flareControls.play("like");
+            },
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  height: 600,
+                  width: double.infinity,
                   child: Image.network(
                     myStories[1].image,
                     fit: BoxFit.cover,
                   ),
                 ),
-              ),
-              Container(
-                width: double.infinity,
-                height: 250,
-                child: Center(
-                  child: SizedBox(
-                    width: 150,
-                    height: 150,
-                    child: FlareActor(
-                      'asset/instagram_like.flr',
-                      controller: flareControls,
-                      animation: 'idle',
+                Container(
+                  width: double.infinity,
+                  height: 250,
+                  child: Center(
+                    child: SizedBox(
+                      width: 150,
+                      height: 150,
+                      child: FlareActor(
+                        'asset/instagram_like.flr',
+                        controller: flareControls,
+                        animation: 'idle',
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           Container(
             height: 50.0,

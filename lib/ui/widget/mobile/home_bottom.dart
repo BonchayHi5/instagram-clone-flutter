@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../all_export.dart';
+import '../../../all_export.dart';
 
 class HomeBottom extends StatelessWidget {
   @override

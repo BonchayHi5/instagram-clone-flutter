@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/all_export.dart';
-import 'package:instagram_clone/ui/widget/photo_grid.dart';
+import 'package:instagram_clone/ui/widget/mobile/photo_grid.dart';
 
 class ProfileBody extends StatelessWidget {
   @override

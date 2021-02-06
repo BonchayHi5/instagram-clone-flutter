@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/ui/widget/home_stories.dart';
-import 'package:instagram_clone/ui/widget/ig_post.dart';
+import 'package:instagram_clone/ui/widget/mobile/home_stories.dart';
+import 'package:instagram_clone/ui/widget/mobile/ig_post.dart';
 
 class HomeBody extends StatelessWidget {
   @override

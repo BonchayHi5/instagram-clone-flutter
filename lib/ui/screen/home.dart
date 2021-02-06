@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/all_export.dart';
+import 'package:instagram_clone/ui/widget/web/home_appbar_web.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    bool _isWeb = Responsive.isDesktop(context);
     return Scaffold(
-      appBar: HomeAppBar.getItem(),
-      bottomNavigationBar: HomeBottom(),
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        color: Colors.white,
-        child: HomeBody(),
+      appBar: _isWeb ? HomeAppBarWeb() : HomeAppBar.getItem(),
+      bottomNavigationBar: !_isWeb ? HomeBottom() : null,
+      body: Responsive(
+        mobile: HomeBody(),
+        desktop: HomeBodyWeb(),
       ),
     );
   }
