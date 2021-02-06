@@ -8,6 +8,8 @@
 
 <img src="https://github.com/BonchayHi5/instagram-clone/blob/master/asset/home_screenshot.jpg" width="200" height="400">
 
+<img src="https://github.com/BonchayHi5/instagram-clone/blob/master/asset/web_screenshot.png" >
+
 
 This project is a starting point for a Flutter application.
 
