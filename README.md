@@ -2,6 +2,9 @@
 Responsive instagram clone ui
 
 
+Visit demo: https://bonchayhi5.github.io/instagram-clone/#/ 
+
+
 
 ### Home Screen
 
@@ -10,7 +13,7 @@ Responsive instagram clone ui
 <img src="https://github.com/BonchayHi5/instagram-clone/blob/master/asset/web_screenshot.png" >
 
 
-Visit demo: https://bonchayhi5.github.io/instagram-clone/#/ 
+
 
 
 **Installation**
