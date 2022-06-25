@@ -2,7 +2,7 @@
 Responsive instagram clone ui
 
 
-Visit demo: https://bonchayhi5.github.io/instagram-clone/#/ 
+Visit demo: https://bonchayhi5.github.io/instagram-clone-flutter/#/ 
 
 
 
